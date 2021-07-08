@@ -1,0 +1,27 @@
+{
+  "name": "project-gg",
+  "version": "1.0.0",
+  "description": "This project is a cloud gaming service",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramondara10/Project-GG.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramondara10/Project-GG/issues"
+  },
+  "homepage": "https://github.com/ramondara10/Project-GG#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.0",
+    "pusher": "^5.0.0"
+  }
+}
