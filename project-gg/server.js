@@ -7,6 +7,7 @@ import Pusher from "pusher";
 //app config
 const app = express();
 const PORT = process.env.PORT || 3000;
+const apiRoutes = require("./routes/api//games")
 
 const pusher = new Pusher({
     appId: "1229891",
@@ -48,6 +49,8 @@ app.use((req,res,next)=>{
     next();
 })
 
+app.use("/api", apiRoutes);
+
 
 //DB config
 const connection_url = "mongodb+srv://tony07:Tonydarashadow1994@@cluster0.d3cij.mongodb.net/gamedb?retryWrites=true&w=majority";
@@ -71,7 +74,7 @@ db.once('open', () => {
         console.log(change)
 
         if (change.operationType === 'insert') {
-            const addedGame = cahnge.fullDocument;
+            const addedGame = change.fullDocument;
             pusher.trigger('added', 'inserted',
                 {
                     name: addedGame.user
