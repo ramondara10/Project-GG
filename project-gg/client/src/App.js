@@ -1,12 +1,9 @@
-import { request } from 'express';
 import React from 'react';
 import './App.css';
 import Row from "./components/Row";
-import Banner from './components/Banner';
+import Banner from './components/Banner/Banner';
 import Nav from './components/Nav/Nav';
-
-
-//import requests from './requests';
+// import requests from './requests';
 
 function App() {
     return (
@@ -19,10 +16,10 @@ function App() {
       {/* rows */}
       <Row
       title="Top Games"
-      fetchURL={requests.}
+      fetchURL={''}
       isLargeRow
       />
-      <Row title="most popular" fetchurl={requests.}/>
+      <Row title="most popular" fetchurl={''}/>
       {/* set rows with each category */}
                         
     </div>

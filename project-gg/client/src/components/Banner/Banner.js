@@ -1,7 +1,7 @@
 import requests from "../requests";
 import React, {useEffect, useState} from 'react';
-import axios from '../axios';
-import '.?/Banner.css';
+import axios from 'axios';
+import '../css/Banner.css';
 
 function Banner() {
     const[game,setGame] = useState([]);

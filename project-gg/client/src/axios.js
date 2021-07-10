@@ -3,7 +3,7 @@ import axios from 'axios';
 // trying to get an api to make this work
 
 const instance = axios.create({
-    baseURL:""
+    baseURL:"https://api.rawg.io/api/game"
 });
 
 export default instance;

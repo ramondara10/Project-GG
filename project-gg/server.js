@@ -1,13 +1,11 @@
-//import section
-import express from 'express';
-import mongoose from 'mongoose';
-import Games from './gamesDB.js';
-import Pusher from "pusher";
-
+const express = require('express');
+const Pusher = require('pusher');
+const Games = require('./models/gamesDB.js');
+const mongoose = require('mongoose');
 //app config
 const app = express();
 const PORT = process.env.PORT || 3000;
-const apiRoutes = require("./routes/api//games")
+const apiRoutes = require("./routes/api/games")
 
 const pusher = new Pusher({
     appId: "1229891",
@@ -17,34 +15,10 @@ const pusher = new Pusher({
     useTLS: true
 });
 
-//const axios = require("axios").default;
-;
-// const routes = require ("./routes");
-
-
-
-//code snippet from rapid api 
-// var options = {
-//     method: 'GET',
-//     url: 'https://rawg-video-games-database.p.rapidapi.com/games/%7Bgame_pk%7D',
-//     headers: {
-//         'x-rapidapi-key': '6160306bc2msh5eb0e684cdf741bp118587jsn617e774aed38',
-//         'x-rapidapi-host': 'rawg-video-games-database.p.rapidapi.com'
-//     }
-// };
-
-// axios.request(options).then(function (response) {
-//     console.log(response.data);
-// }).catch(function (error) {
-//     console.error(error);
-// });
-
-
 // middleware
 app.use(express.json());
 
 app.use((req,res,next)=>{
-    res.setHeader('Acces-Control-Allow-Origin', '*');
     res.setHeader('Acces-Control-Allow-Origin', '*');
     next();
 })
@@ -109,9 +83,6 @@ app.get('/api/v1/games', (req, res) => {
         }
     });
 });
-
-// connect to mongo
-//mongoose.connect(process.env.MONGODB_URI || );
 
 //start
 app.listen(PORT, function () {
